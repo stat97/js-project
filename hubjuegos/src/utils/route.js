@@ -1,19 +1,17 @@
-// route.js ---> utils/route.js
-import { getUser } from "../global/state/globalState";
-import { Login, PrintPokemonPage, printTemplateDashboard } from "../pages";
+/// -----  REFRESCAMOS LA MEMORIA DE ESTA FUNCION------
+// route.js------> utils/route.js
 
+import { getUser } from "../global/state/globalState";
+import { Login, printTemplateDashboard } from "../pages";
+ 
 export const initControler = (pagesRender) => {
  
   switch (pagesRender) {
-
-	/////// -------OPERA ESTE CASO--- SI NO HAY USER EN EL CONTEXTO PINTA EL LOGIN
     case undefined:
       localStorage.getItem(getUser().name) ? printTemplateDashboard() : Login();
       break;
-
-	////// ------------------------------------------------------------------------
     case "Pokemon":
-      PrintPokemonPage();
+      //*PrintPokemonPage();
       break;
     case "Dashboard":
       printTemplateDashboard();
