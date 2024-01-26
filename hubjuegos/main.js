@@ -2,6 +2,7 @@ import './style.css'
 import { initControler, initTemplate } from "./src/utils";
 
 
+
 //! -----> renderizamos las etiquetas de la estructura inicial
 /** creamos el template inicial con la estructura basica como es el footer
  * main y el header y le daremos contenido con su componente correspondiente

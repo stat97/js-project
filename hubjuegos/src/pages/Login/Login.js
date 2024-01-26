@@ -39,7 +39,8 @@ const addListeners = () => {
       setUser(`${valueInput}USER`);
       // y seteamos los datos del locaStorage en los datos de usuario logado con sus favoritos
       setUserData(parseUser);
-    } else {
+      initControler();
+    } else if (valueInput){
       /** en caso de no estar este usuario de antes registrado en el localStorage lo que hacemos es que lo crearemos
        * de cero con su array de fav vacio y el token en true y el nombre es el nomvre del input
        */
@@ -57,10 +58,11 @@ const addListeners = () => {
       // seteamos el nombre en su estado asi como los datos del usaurio en el segundo estado customUser
       setUser(`${valueInput}USER`);
       setUserData(customUser);
+      initControler();
     }
 
     /** llamamos al initControler sin el parametro para que compruebe que se ha metido el userCurrent en el sessionStorage  */
-    initControler();
+    //*initControler();
   });
 };
 
