@@ -1,7 +1,7 @@
 // route.js------> utils/route.js
 import { getUser } from "../global/state/globalState";
-import { Login, PrintPokemonPage, printTemplateDashboard,HangmanGame} from "../pages";
-
+import { Login, PrintPokemonPage, printTemplateDashboard} from "../pages";
+import { printHangmanGame } from "../pages";
 
 export const initControler = (pagesRender) => {
   switch (pagesRender) {
@@ -24,7 +24,7 @@ export const initControler = (pagesRender) => {
       // ... Tu lógica para "Memory" aquí
       break;
     case "HangmanGame":
-      HangmanGame();
+      printHangmanGame();
       break;
   }
 };

@@ -1,75 +1,58 @@
-export const HangmanGame = () => {
-  const getRandomWord = () => {
-    const words = ['javascript', 'programming', 'hangman', 'challenge'];
-    return words[Math.floor(Math.random() * words.length)];
-  };
-  const createGuessedWord = (word) => {
-    return '_'.repeat(word.length);
-  };
+const hangmanGameTemplate = () =>{ `
+  <!DOCTYPE html>
+  <html lang="es">
+    <head>
+      <meta charset="utf-8">
+      <title>Ud.2 - Relacion de ejercicios 5</title>
+      <link rel="stylesheet" href="estilo-ahoracado.css">
+    </head>
+    <body>
+      <div class="main-container">
 
-  const HangmanGame = () => {
-    let secretWord = getRandomWord();
-    let guessedWord = createGuessedWord(secretWord);
-    let attemptsLeft = 6;
+        <h1 class="titulo">Juego del ahorcado</h1>
+        <h1 id="msg-final"></h1>
+        <h3 id="acierto"></h3>
+        <div class="flex-row no-wrap">
+          <h2 class="palabra" id="palabra"></h2>
+          <picture>
+            <img src="img/ahorcado_6.png" alt="" id="image6">
+            <img src="img/ahorcado_5.png" alt="" id="image5">
+            <img src="img/ahorcado_4.png" alt="" id="image4">
+            <img src="img/ahorcado_3.png" alt="" id="image3">
+            <img src="img/ahorcado_2.png" alt="" id="image2">
+            <img src="img/ahorcado_1.png" alt="" id="image1">
+            <img src="img/ahorcado_0.png" alt="" id="image0">
+          </picture>
+        </div>
+        <div class="flex-row" id="turnos">
+          <div class="col">
+            <h3>Intentos restantes: <span id="intentos">6</span></h3>
+          </div>
+          <div class="col">
+            <button onclick="inicio()" id="reset">Elegir otra palabra</button>
+            <button onclick="pista()" id="pista">Dame una pista!</button>
+            <span id="hueco-pista"></span>
+          </div>
+        </div>
+        
+        <div class="flex-row">
+          <div class="col">
+            <div class="flex-row" id="abcdario">
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
 
-    
-
-   
-    const handleGuess = () => {
-      const guessInput = document.getElementById('guess');
-      const guess = guessInput.value.toLowerCase();
-      const resultElement = document.getElementById('result');
-
-      if (!isValidGuess(guess)) {
-        resultElement.textContent = 'Ingresa una letra válida.';
-      } else {
-        if (secretWord.includes(guess)) {
-          updateGuessedWord(guess);
-          resultElement.textContent = '¡Bien! Letra correcta.';
-        } else {
-          attemptsLeft--;
-          resultElement.textContent = `Incorrecto. Intentos restantes: ${attemptsLeft}`;
-        }
-
-        if (attemptsLeft === 0 || guessedWord === secretWord) {
-          endGame(attemptsLeft === 0);
-        }
-      }
-
-      guessInput.value = '';
-    };
-
-    const isValidGuess = (guess) => {
-      return /^[a-z]$/.test(guess) && !guessedWord.includes(guess);
-    };
-
-    const updateGuessedWord = (guess) => {
-      guessedWord = guessedWord.split('').map((letter, index) =>
-        secretWord[index] === guess ? guess : letter
-      ).join('');
-    };
-
-    const endGame = (isGameOver) => {
-      const resultElement = document.getElementById('result');
-      if (isGameOver) {
-        resultElement.textContent = `¡Oh no! Te quedaste sin intentos. La palabra era: ${secretWord}`;
-      } else {
-        resultElement.textContent = '¡Felicidades! ¡Adivinaste la palabra!';
-      }
-    };
-
-    return `
-      <div class="hangman-game">
-        <h2>Juego del Ahorcado</h2>
-        <p id="result"></p>
-        <p>${guessedWord}</p>
-        <input type="text" id="guess" maxlength="1" pattern="[a-zA-Z]" title="Ingresa una letra">
-        <button onclick="handleGuess()">Adivinar</button>
       </div>
-    `;
-  };
-
-  // Llama a la función principal al final de PrintHangmanGame
-  document.querySelector("main").innerHTML = HangmanGame();
+      <script src="ahorcado.js"></script>
+    </body>
+  </html>
+`;
+}
+// Función principal que inicializa la página del juego del ahorcado
+export const printHangmanGame = () => {
+ 
+    
+    document.querySelector("main").innerHTML = hangmanGameTemplate();
+    initHangmanGame();
 };
-

@@ -1,7 +1,7 @@
 
 // src/pages/Dashboard/Dashboard.js
 import { getInfo, initControler } from "../../utils";
-import { HangmanGame } from "../HangmanGame/HangmanGame";
+
 
 import "./Dashboard.css";
 
@@ -18,10 +18,10 @@ const template = () => `
           <h2>POKEMON</h2>
         </figure>
       </li>
-      <li id ="hangmanGame">
+      <li id ="navigateHangmanGame">
         <div>
           <div class="game-icon">
-            <img src="src/icons/interrogante.png" alt="Icono del juego de adivinanzas">
+            <img id ="hang" src="src/icons/interrogante.png" alt="Icono del juego de adivinanzas">
           </div>
           
         </div>
@@ -47,10 +47,12 @@ const addEventListeners = () => {
   navigatePokemon.addEventListener("click", () => {
     initControler("Pokemon");
   });
-  const navigateHangmanGame = document.getElementById("hangmanGame");
+  const navigateHangmanGame = document.getElementById("navigateHangmanGame");
+
   navigateHangmanGame.addEventListener("click", () => {
     
     initControler("HangmanGame");
+     console.log("click")
     
   });
 };
