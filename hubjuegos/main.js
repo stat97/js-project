@@ -1,5 +1,7 @@
 import './style.css'
 import { initControler, initTemplate } from "./src/utils";
+// src/main.js
+
 
 
 

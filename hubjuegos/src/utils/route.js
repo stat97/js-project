@@ -1,14 +1,12 @@
-/// -----  REFRESCAMOS LA MEMORIA DE ESTA FUNCION------
 // route.js------> utils/route.js
-
 import { getUser } from "../global/state/globalState";
-import { Login, PrintPokemonPage, printTemplateDashboard } from "../pages";
+import { Login, PrintPokemonPage, printTemplateDashboard,HangmanGame} from "../pages";
+
 
 export const initControler = (pagesRender) => {
- 
   switch (pagesRender) {
     case undefined:
-      localStorage.getItem(getUser().name) !="USER" ? printTemplateDashboard() : Login();
+      localStorage.getItem(getUser().name) ? printTemplateDashboard() : Login();
       break;
     case "Pokemon":
       PrintPokemonPage();
@@ -17,13 +15,17 @@ export const initControler = (pagesRender) => {
       printTemplateDashboard();
       break;
     case "Topo":
-      "Topo()";
+      // ... Tu lógica para "Topo" aquí
       break;
     case "Login":
       Login();
       break;
     case "Memory":
-      "Memory()";
+      // ... Tu lógica para "Memory" aquí
+      break;
+    case "HangmanGame":
+      HangmanGame();
       break;
   }
 };
+

@@ -2,7 +2,7 @@
 import { getUserData, setUserData } from "../../global/state/globalState";
 import "./CardPokemons.css";
 
-export const CardsPokemons = (data) => {
+export const CardPokemons = (data) => {
   /** Nos traemos los datos del usuario para asi poder saber cual son los pokemons que tenemos como
    * favoritos y asi luego poder pintar los corazones en rojo de los que son favoritos
    */

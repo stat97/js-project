@@ -1,5 +1,5 @@
 // paginacion.js ----> src/utils/paginacion.js
-import { CardsPokemons } from "../components";
+import { CardPokemons } from "../components";
 
 export const Paginacion = (data, numberElement) => {
   /**
@@ -59,7 +59,7 @@ export const Paginacion = (data, numberElement) => {
    * la primera pagina y se lo mandamos al componente de 
    * la carta de pokemon para pintarlos en el componente
    */
-  CardsPokemons(data.slice(0, numberElement));
+  CardPokemons(data.slice(0, numberElement));
 };
 
 //! -----------------------------------------------------------------------------------------
@@ -130,6 +130,6 @@ const addListeners = (buttonNumber, data, numberElement, i) => {
 
     /** Una vez calculado el slice se lo pasamos al 
      * componente CardsPokemons que se encarga de pintar la galeria pokemon */
-    CardsPokemons(data.slice(start, end));
+    CardPokemons(data.slice(start, end));
   });
 };

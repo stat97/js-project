@@ -4,16 +4,19 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0d0d0d;
-    -webkit-box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
+    background: black;
+    /*-webkit-box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
     -moz-box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
-    box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
+    box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);*/
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 100;
-    color: #0def03;
+    color: whitesmoke;
     & span {
-      color: white;
+      color: whitesmoke;
     }
+  }
+  body {
+    margin-bottom: 10vh; /* Ajusta el margen inferior según la altura de tu footer */
   }

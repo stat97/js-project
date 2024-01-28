@@ -1,6 +1,10 @@
-//Dashboard.js ------> src/pages/Dashboard/Dashboard.js
-import { initControler } from "../../utils";
+
+// src/pages/Dashboard/Dashboard.js
+import { getInfo, initControler } from "../../utils";
+import { HangmanGame } from "../HangmanGame/HangmanGame";
+
 import "./Dashboard.css";
+
 
 const template = () => `
   <div id="containerDashboard">
@@ -14,14 +18,13 @@ const template = () => `
           <h2>POKEMON</h2>
         </figure>
       </li>
-      <li>
-        <figure>
-          <img
-            src="https://res.cloudinary.com/dq186ej4c/image/upload/v1689761641/pngwing.com_1_iq8zfk.png"
-            alt=" go to wacka topo game"
-          />
-          <h2>WACKA TOPO</h2>
-        </figure>
+      <li id ="hangmanGame">
+        <div>
+          <div class="game-icon">
+            <img src="src/icons/interrogante.png" alt="Icono del juego de adivinanzas">
+          </div>
+          
+        </div>
       </li>
       <li>
         <figure>
@@ -44,6 +47,12 @@ const addEventListeners = () => {
   navigatePokemon.addEventListener("click", () => {
     initControler("Pokemon");
   });
+  const navigateHangmanGame = document.getElementById("hangmanGame");
+  navigateHangmanGame.addEventListener("click", () => {
+    
+    initControler("HangmanGame");
+    
+  });
 };
 
 export const printTemplateDashboard = () => {
@@ -55,4 +64,13 @@ export const printTemplateDashboard = () => {
 
   /** metemos los escuchadores de la pagina */
   addEventListeners();
+
+  /** y por ultimo traemos la info que hace la llamada asincrona a la api de pokemon y lo setea en el estado
+   */
+//--------------------------------------------- LO NUEVO -------------------------
+  getInfo();
+//---------------------------------------------------------------------------------
 };
+
+
+
