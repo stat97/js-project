@@ -18,21 +18,13 @@ const template = () => `
           <h2>POKEMON</h2>
         </figure>
       </li>
-      <li id ="navigateHangmanGame">
-        <div>
-          <div class="game-icon">
-            <img id ="hang" src="src/icons/interrogante.png" alt="Icono del juego de adivinanzas">
-          </div>
-          
-        </div>
-      </li>
+   
       <li id ="navigateHangmanGame">
         <figure id ="navigateHangmanGame">
-          <img
-           id ="hang" src="src/icons/interrogante.png"
+          <img src="src/pages/HangmanGame/img/ahorcado_0.png"
             alt="go to memory game"
           />
-          <h2>MEMORY GAME</h2>
+          <h2>AHORCADO</h2>
         </figure>
       </li>
     </ul>
