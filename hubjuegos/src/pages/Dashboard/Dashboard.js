@@ -26,10 +26,10 @@ const template = () => `
           
         </div>
       </li>
-      <li>
-        <figure>
+      <li id ="navigateHangmanGame">
+        <figure id ="navigateHangmanGame">
           <img
-            src="https://res.cloudinary.com/dq186ej4c/image/upload/v1689761735/6168776_kfna36.png"
+           id ="hang" src="src/icons/interrogante.png"
             alt="go to memory game"
           />
           <h2>MEMORY GAME</h2>
