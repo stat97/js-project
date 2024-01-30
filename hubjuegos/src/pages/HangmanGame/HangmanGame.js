@@ -38,17 +38,18 @@ const template = () => `
   </div>
 `
 const addEvents = () => {
-  document.querySelector("#reset").addEventListener("click", inicio)
+  document.querySelector("#reset").addEventListener("click", inicio) // evento de funcion inicio en el boton reset
 
-  document.querySelectorAll(".letra").forEach(item => {
+  document.querySelectorAll(".letra").forEach(item => //en cada boton de letra añadimos la funcion de intento
+  {
     item.addEventListener("click", (e) => intento(e.target.id))
   })
-  document.querySelector("#pista").addEventListener("click", pista)
+  document.querySelector("#pista").addEventListener("click", pista) //evento funcion fista a boton pista
 }
 
 export const printHangmanGame = () => {
   document.querySelector("main").innerHTML = template()
-  generaABC("a", "z")
-  desableBtns()
-  addEvents()
+  generaABC()
+  desableBtns() // desabilita los botones cuando printa la pagina ya que solo los va  hablitar cuando pulsemos el boton de empezar
+  addEvents() //añade eventos
 }
